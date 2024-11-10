@@ -10,4 +10,4 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strncmp(const char *s1, char const *set)
+int	ft_strncmp(const char *s1, char const *set)
