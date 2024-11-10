@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: leothoma <leothoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 02:49:18 by leothoma          #+#    #+#             */
-/*   Updated: 2024/11/07 02:49:18 by leothoma         ###   ########.fr       */
+/*   Updated: 2024/11/10 04:32:29 by leothoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_trim(char c, char const *set)
 	return (0);
 }
 
-int		ft_strlen(char const *str)
+int	ft_strlen(char const *str)
 {
 	int		i;
 
