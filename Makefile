@@ -17,6 +17,6 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	rm *.o libft.a
+	rm ${OBJS} libft.a
 
 .PHONY: all
