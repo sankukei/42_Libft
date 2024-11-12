@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 23:07:05 by leothoma          #+#    #+#             */
-/*   Updated: 2024/11/06 23:07:05 by leothoma         ###   ########.fr       */
+/*   Created: 2024/11/12 17:28:26 by leothoma          #+#    #+#             */
+/*   Updated: 2024/11/12 17:28:26 by leothoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-
-	src++;
+	s1++;
+	s2++;
 	n++;
-	return(dest);	
+	return (1);
 }

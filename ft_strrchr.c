@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 23:07:05 by leothoma          #+#    #+#             */
-/*   Updated: 2024/11/06 23:07:05 by leothoma         ###   ########.fr       */
+/*   Created: 2024/11/12 18:17:49 by leothoma          #+#    #+#             */
+/*   Updated: 2024/11/12 18:17:49 by leothoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
+	char	*xd;
 
-	src++;
-	n++;
-	return(dest);	
+	xd = 0;
+	s++;
+	c++;
+	return (xd);
 }

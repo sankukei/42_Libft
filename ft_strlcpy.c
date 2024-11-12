@@ -1,5 +1,17 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 18:39:27 by leothoma          #+#    #+#             */
+/*   Updated: 2024/11/12 18:39:27 by leothoma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 int     ft_strlcpy(char *dst, const char *src, size_t size)
 {
         size_t     i;
@@ -11,12 +23,4 @@ int     ft_strlcpy(char *dst, const char *src, size_t size)
                 i++;
         }
         return (i);
-}
-
-
-int main(void)
-{
-        char    buff[150];
-        printf("%d", ft_strlcpy(buff, "xddd", 10));
-        return  (0);
 }
