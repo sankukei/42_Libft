@@ -24,7 +24,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	b = src;
 
 	while (*b)
-		tmp[i] = b[i++];
+        {
+		tmp[i] = b[i];
+                i++;
+        }
 	while (*tmp)
 		*a++ = *b++;
 	return (a);
