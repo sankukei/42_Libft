@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+#include <stdio.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -33,14 +34,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
         j = 0;
         ptr = 0;
         y = 0;
-        if (big[i] == '\0')
+        if (ft_strlen(big) == 0)
         	return (0);
+        if (ft_strlen(little) == 0)
+		return ((char *)big);
         while (big[i] && i <= len)
         {
           	y = i;
 		while (big[y] == little[j])
                 {
-                	if (j == ft_strlen(little) - 1)
+                	if (j == ft_strlen(little)- 1)
                         	return (ptr = (char *)&big[i]);
                         y++;
                         j++;
@@ -50,12 +53,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
         }
         return (ptr);
 }
-
+/*
 int 	main(void)
 {
-	#include <stdio.h>
-	char * empty = (char*)"";
-	ft_strnstr(empty, "", -1) == empty;
   	printf("%s", ft_strnstr("hello les amis", "les", 10));
+  	printf("%d", strnstr("hello les amis", "les", 10));
   	return (0);
-}
+}*/
