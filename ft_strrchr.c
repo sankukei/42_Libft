@@ -10,12 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*xd;
+	int	len;
 
-	xd = 0;
-	s++;
-	c++;
-	return (xd);
+	len = ft_strlen(s);
+	if (c == '\0')
+		len++;
+	while (len--)
+	{
+		if (s[len] == (char)c)
+			return ((char *)&s[len]);
+	}
+	return (0);
 }
