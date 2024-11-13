@@ -4,18 +4,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	char	*res;
 
-	i = 0;
-	res = 0;
-	while (s[i])
+//	if (*s == '\0')
+//		return ((char *)s);
+	while (*s)
 	{
-		if (s[i] == c)
-			return (res = (char *)&s[i]);
-		i++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
-	return (res);
+	if (c == '\0')
+	return (0);
+}
+
+int main(void)
+{
+#include <stdio.h>
+	printf("%p\n", ft_strchr("hello", '\0'));
+	printf("%p\n", strchr("hello", '\0'));
 }

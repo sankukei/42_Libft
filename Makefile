@@ -33,6 +33,8 @@ SRC =	ft_isprint.c \
 	ft_isdigit.c \
 	ft_isascii.c \
 	ft_strrchr.c \
+	ft_strlcat.c \
+	ft_split.c
 
 OBJS = ${SRC:.c=.o}
 

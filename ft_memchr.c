@@ -14,11 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	void	*xd;
+	unsigned char	*ptr;
 
-	xd = 0;
-	n++;
-	s++;
-	c++;
-	return (xd);
+	ptr = (unsigned char *)s;
+	while (n--)
+	{
+		if (*ptr == (unsigned char)c)
+			return (ptr);
+		ptr++;
+	}
+	return (0);
 }

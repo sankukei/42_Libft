@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 	res[y] = 0;
 	return (res);
 }
-
+/*
 int	main(void)
 {
 	#include <stdio.h>
@@ -96,4 +96,4 @@ int	main(void)
 		y++;
 	}
 	return (0);
-}
+}*/

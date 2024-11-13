@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_chackal(int n)
 {
@@ -54,11 +53,4 @@ char	*ft_itoa(int n)
                 size--;
         }
 	return (res);
-}
-
-int	main(void)
-{
-  	char *tmp = ft_itoa(-2147483648);
-        printf("%s", tmp);
-  	return 0;
 }

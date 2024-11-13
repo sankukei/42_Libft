@@ -19,7 +19,9 @@ void	ft_bzero(void *s, size_t n)
 
 	str = s;
 	i = 0;
-	while (i <= n)
-		str[i++] = '\0';
-	
+	while (i < n)
+	{
+		*str++ = '\0';
+		i++;
+	}
 }
