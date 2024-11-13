@@ -50,10 +50,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
         }
         return (ptr);
 }
-/*
+
 int 	main(void)
 {
 	#include <stdio.h>
+	char * empty = (char*)"";
+	ft_strnstr(empty, "", -1) == empty;
   	printf("%s", ft_strnstr("hello les amis", "les", 10));
   	return (0);
-}*/
+}
