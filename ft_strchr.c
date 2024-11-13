@@ -17,13 +17,12 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
 	return (0);
 }
-
+/*
 int main(void)
 {
 #include <stdio.h>
 	printf("%p\n", ft_strchr("hello", '\0'));
 	printf("%p\n", strchr("hello", '\0'));
-}
+}*/
