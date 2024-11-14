@@ -1,18 +1,21 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/14 00:35:14 by leothoma          #+#    #+#             */
+/*   Updated: 2024/11/14 00:35:14 by leothoma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(const char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
 	char	*res;
 
 	i = 0;

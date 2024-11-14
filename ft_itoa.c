@@ -14,43 +14,43 @@
 
 int	ft_chackal(int n)
 {
-        int	i;
+	int	i;
 
-        i = 0;
-  	if (n < 0)
-        	n *= -1;
-  	while (n > 10)
-        {
-        	n /= 10;
-                i++;
-        }
+	i = 0;
+	if (n < 0)
+		n *= -1;
+	while (n > 10)
+	{
+		n /= 10;
+		i++;
+	}
 	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-  	char	*res;
-        int	size;
-        int	neg;
+	char	*res;
+	int		size;
+	int		neg;
 
-        neg = 0;
-        size = ft_chackal(n);
-        if (n == -2147483648)
-        	return (res = "-2147483648");
-        if (n < 0)
-        {
+	neg = 0;
+	size = ft_chackal(n);
+	if (n == -2147483648)
+		return (res = "-2147483648");
+	if (n < 0)
+	{
 		n *= -1;
-        	size++;
-                neg = 1;
-        }
+		size++;
+		neg = 1;
+	}
 	res = malloc(ft_chackal(n));
-        while (size >= 0)
-        {
-          	res[size] = n % 10 + 48;
-        	n /= 10;
-        	if (size == 0 && neg == 1)
-        		res[size] = '-';
-                size--;
-        }
+	while (size >= 0)
+	{
+		res[size] = n % 10 + 48;
+		n /= 10;
+		if (size == 0 && neg == 1)
+			res[size] = '-';
+		size--;
+	}
 	return (res);
 }

@@ -35,6 +35,7 @@ int	ft_strlen(char const *str)
 			i++;
 	return (i);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
@@ -45,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	y = 0;
 	res = malloc(ft_strlen(s1) + 1);
 	if (!res)
-			return (NULL);
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	while (is_trim(s1[i], set))

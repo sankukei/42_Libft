@@ -37,7 +37,7 @@ int	count_words(char *str, char c)
 
 char	*custom_dup(char *str, char c)
 {
-	int	i;
+	int		i;
 	char	*res;
 
 	i = 0;

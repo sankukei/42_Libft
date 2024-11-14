@@ -36,7 +36,7 @@ SRC =	ft_isprint.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
 
 OBJS = ${SRC:.c=.o}
 
@@ -49,10 +49,11 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	rm ${OBJS}
-fclean: clean
-	rm libft.a
-re: fclean
-	all
+	rm -f ${OBJS}
+
+fclean: clean;
+	rm -f libft.a
+
+re: fclean all
 
 .PHONY: all, clean, fclean, re
