@@ -17,35 +17,23 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	lsrc;
 	size_t	ldest;
+	size_t	x;
 
 	i = 0;
+	x = 0;
 	lsrc = ft_strlen(src);
 	ldest = ft_strlen(dest);
-	if (size < lsrc)
-		return (size);
-	while (*src && i <= size)
+	while (dest[x])
+		x++;
+	while (*src && (i + x + 1) < size)
 	{
-		dest[ldest++] = *src++;
+		dest[x + i] = src[i];
 		i++;
 	}
-	dest[ldest] = '\0';
-	return (ft_strlen(src) + ft_strlen(dest));
+	if (i < size)
+		dest[x + i] = '\0';
+	if (size <= ldest)
+		return (lsrc + size);
+	else
+		return (lsrc + ldest);
 }
-/*
-int	main(void)
-{
-	char	*dest;
-	char	*src;
-	size_t	xd;
-	dest = "aaaa\0        ";
-	src = "bbbb";
-	xd = ft_strlcat(dest, src, 5);
-	int	i;
-	i = 0;
-	while (*dest)
-	{
-		write(1, &dest, 1);
-	}
-//	ft_putstr_fd(dest, 1);
-	return (0);
-}*/

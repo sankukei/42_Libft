@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 		size++;
 		neg = 1;
 	}
-	res = malloc(ft_chackal(n));
+	res = malloc(ft_chackal(n) + 1);
 	while (size >= 0)
 	{
 		res[size] = n % 10 + 48;
@@ -54,3 +54,13 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
+/*
+
+int main(void)
+{
+#include <stdio.h>
+	printf("%s\n", ft_itoa(123));
+	printf("%s\n", ft_itoa(-123));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-0));
+}*/

@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 19:16:36 by leothoma          #+#    #+#             */
-/*   Updated: 2024/11/06 19:16:36 by leothoma         ###   ########.fr       */
+/*   Created: 2024/11/16 01:10:01 by leothoma          #+#    #+#             */
+/*   Updated: 2024/11/16 01:10:01 by leothoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *str)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
+	new->next = *lst;
+	*lst = new;
 }

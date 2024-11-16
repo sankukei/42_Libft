@@ -40,9 +40,6 @@ SRC =	ft_isprint.c \
 
 OBJS = ${SRC:.c=.o}
 
-.c.o:
-	${COMP} ${FLAGS} -c $< -o ${<:.c=.o}
-
 ${NAME}: ${OBJS}
 	ar -rsc ${NAME} ${OBJS} 
 

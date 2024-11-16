@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 
 	res = malloc(count_words((char *)s, c) + 1);
 	if (!res)
-		return (0);
+		return (NULL);
 	i = 0;
 	y = 0;
 	while (s[i])
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 	res[y] = 0;
 	return (res);
 }
-/*
+
 int	main(void)
 {
 	#include <stdio.h>
@@ -96,4 +96,4 @@ int	main(void)
 		y++;
 	}
 	return (0);
-}*/
+}
