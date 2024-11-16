@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leothoma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 01:45:25 by leothoma          #+#    #+#             */
-/*   Updated: 2024/11/16 01:45:25 by leothoma         ###   ########.fr       */
+/*   Created: 2024/11/16 05:39:14 by leothoma          #+#    #+#             */
+/*   Updated: 2024/11/16 05:39:14 by leothoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstlast(t_list *lst)
+void ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	while (lst && lst->next)
+	t_list	**xd;
+
+	xd = lst;
+	while (*lst)
+	{
+		del(lst->content)
 		lst = lst->next;
-	return (lst);
+	}
 }
