@@ -55,6 +55,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j--;
 	while (i <= j)
 		res[y++] = s1[i++];
+        res[y] = '\0';
 	return (res);
 }
 /*

@@ -21,14 +21,13 @@ int	ft_atoi(const char *str)
 	res = 0;
 	count = 0;
 	neg = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == '-' || str[i] == '+' || str[i] == 32)
+	while (((str[i] >= 9 && str[i] <= 13) || (str[i]) == 32))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		if (str[i] == '-' || str[i] == '+')
-		{
-			count++;
-			if (str[i] == '-')
-				neg++;
-		}
+		count++;
+		if (str[i] == '-')
+			neg++;
 		if (count > 1)
 			return (0);
 		i++;
