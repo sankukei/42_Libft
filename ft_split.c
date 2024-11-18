@@ -49,34 +49,33 @@ char	*custom_dup(char *str, char c)
 	i = 0;
 	while (!(is_charset(str[i], c)))
 	{
-		res[i] = str[i];
+		res[i] = *str++;
 		i++;
 	}
+        res[i] = '\0';
 	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
 	int		y;
 	char	**res;
 
 	res = malloc(count_words((char *)s, c) + 1);
 	if (!res)
 		return (NULL);
-	i = 0;
 	y = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (!(is_charset(s[i], c)))
-			res[y] = custom_dup((char *)&s[i], c);
-		i++;
+		if (!(is_charset(*s, c)))
+			res[y] = custom_dup((char *)s, c);
+		s++;
 		y++;
 	}
 	res[y] = 0;
 	return (res);
 }
-
+/*
 int	main(void)
 {
 	#include <stdio.h>
@@ -96,4 +95,4 @@ int	main(void)
 		y++;
 	}
 	return (0);
-}
+}*/

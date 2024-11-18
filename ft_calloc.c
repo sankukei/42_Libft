@@ -15,10 +15,27 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
+	char	*tmp;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	res = malloc(nmemb * size);
-
+	if (nmemb > ((size) - 1 / size))
+		res = malloc(nmemb * size);
+	if (!res)
+		return (NULL);
+	tmp = res;
+	while (*tmp)
+		*tmp++ = 0;
 	return (res);
 }
+/*
+int     main(void)
+{
+        char    *str;
+
+        str = (char *)ft_calloc(30, 1);
+        while (*str)
+                write(1, str, 1);
+
+        return (0);
+}*/

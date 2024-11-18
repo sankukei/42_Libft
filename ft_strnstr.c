@@ -11,14 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
-
 
 static size_t	ft_strlenx(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -30,36 +27,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	int		y;
-	char	*ptr;
+	size_t	little_len;
 
 	i = 0;
 	j = 0;
-	ptr = 0;
-	y = 0;
-	if (ft_strlenx(big) == 0)
-		return (0);
-	if (ft_strlenx(little) == 0)
+	little_len = ft_strlenx(little);
+	if (!*little)
 		return ((char *)big);
-	while (big[i] && i <= len && y <= len)
+	if (little_len > len)
+		return (NULL);
+	while (big[i] && i + little_len <= len)
 	{
-		y = i;
-		while (big[y] == little[j])
-		{
-			if (j == ft_strlenx(little) - 1)
-				return (ptr = (char *)&big[i]);
-			y++;
-			j++;
-		}
 		j = 0;
+		while (j < little_len && big[i + j] == little[j])
+			j++;
+		if (j == little_len)
+			return ((char *)&big[i]);
 		i++;
 	}
-	return (ptr);
-}
-
-int 	main(void)
-{
-	printf("%s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	printf("%s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-  	return (0);
+	return (0);
 }
