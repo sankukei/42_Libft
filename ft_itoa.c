@@ -44,6 +44,8 @@ char	*ft_itoa(int n)
 		neg = 1;
 	}
 	res = malloc(ft_chackal(n) + 1);
+	if (!res)
+		return (NULL);
 	while (size >= 0)
 	{
 		res[size] = n % 10 + 48;

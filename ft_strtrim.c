@@ -12,7 +12,35 @@
 
 #include <stdlib.h>
 
-int	is_trim(char c, char const *set)
+
+
+static int	ft_strlen(char const *str);
+static int	is_trim(char c, char const *set);
+
+static int	m_size(char const *str, char const *set)
+{
+
+	int	i;
+	int	count;
+	int	len;
+
+	count = 0;
+	i = 0;
+	len = ft_strlen(str) - 1;
+	while (str[i] && is_trim(str[i], set))
+	{
+		count++;
+		i++;
+	}
+	while (str[len] && is_trim(str[len], set))
+	{
+		count++;
+		len--;
+	}
+	return (count);
+}
+
+static int	is_trim(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +54,7 @@ int	is_trim(char c, char const *set)
 	return (0);
 }
 
-int	ft_strlen(char const *str)
+static int	ft_strlen(char const *str)
 {
 	int		i;
 
@@ -44,7 +72,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		y;
 
 	y = 0;
-	res = malloc(ft_strlen(s1) + 1);
+	res = malloc((ft_strlen(s1) - m_size(s1, set)) + 1);
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -61,6 +89,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int main (void)
 {
+#include <stdio.h>
 	printf("%s", ft_strtrim("xxaaax//helloxlesamisxxxxx//xxx", "/xa"));
 	ft_strtrim("xxxhelloxlesamisxxx", "x");
   	return (0);
