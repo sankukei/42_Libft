@@ -12,14 +12,11 @@
 
 #include <stdlib.h>
 
-
-
 static int	ft_strlen(char const *str);
 static int	is_trim(char c, char const *set);
 
 static int	m_size(char const *str, char const *set)
 {
-
 	int	i;
 	int	count;
 	int	len;
@@ -83,7 +80,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j--;
 	while (i <= j)
 		res[y++] = s1[i++];
-        res[y] = '\0';
+	res[y] = '\0';
 	return (res);
 }
 /*

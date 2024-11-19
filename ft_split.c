@@ -33,16 +33,6 @@ static int	is_charset(char str, char c)
 	return (0);
 }
 
-static	int	ft_strlenx(const char *str)
-{
-	int 	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 static int	count_words(char *str, char c)
 {
 	int	i;
@@ -52,7 +42,7 @@ static int	count_words(char *str, char c)
 	count = 0;
 	while (str[i] && str[i + 1])
 	{
-		if (is_charset(str[i], c) && str[i + 1] != c && i < ft_strlenx(str))
+		if (is_charset(str[i], c) && str[i + 1] != c)
 			count++;
 		i++;
 	}
@@ -83,14 +73,14 @@ static char	*custom_dup(char *str, char c, char **tmp, int y)
 		res[i] = str[i];
 		i++;
 	}
-        res[i] = '\0';
+	res[i] = '\0';
 	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		y;
-	char	**res;
+	int			y;
+	char		**res;
 	char const	*sinistre;
 
 	res = malloc((count_words((char *)s, c) + 1) * sizeof(char *));
@@ -111,7 +101,6 @@ char	**ft_split(char const *s, char c)
 		}
 		else
 			s++;
-
 	}
 	res[y] = NULL;
 	return (res);

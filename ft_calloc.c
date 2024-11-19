@@ -14,9 +14,9 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*res;
+	void			*res;
 	unsigned char	*tmp;
-	int	i;
+	int				i;
 
 	i = 0;
 	if (nmemb == 0 || size == 0)
