@@ -32,7 +32,7 @@ static int	m_size(char const *str, char const *set)
 		count++;
 		i++;
 	}
-	while (str[len] && is_trim(str[len], set))
+	while (is_trim(str[len], set))
 	{
 		count++;
 		len--;
@@ -90,6 +90,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 int main (void)
 {
 #include <stdio.h>
+	ft_strtrim("   xxx   xxx", " x");
 	printf("%s", ft_strtrim("xxaaax//helloxlesamisxxxxx//xxx", "/xa"));
 	ft_strtrim("xxxhelloxlesamisxxx", "x");
   	return (0);

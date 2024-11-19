@@ -15,27 +15,18 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
-	char	*tmp;
+	unsigned char	*tmp;
+	int	i;
 
+	i = 0;
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	if (nmemb > ((size) - 1 / size))
+	if (!(nmemb > ((size_t) - 1 / size)))
 		res = malloc(nmemb * size);
 	if (!res)
 		return (NULL);
 	tmp = res;
-	while (*tmp)
+	while (i++ < nmemb * size)
 		*tmp++ = 0;
 	return (res);
 }
-/*
-int     main(void)
-{
-        char    *str;
-
-        str = (char *)ft_calloc(30, 1);
-        while (*str)
-                write(1, str, 1);
-
-        return (0);
-}*/
