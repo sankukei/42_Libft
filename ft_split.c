@@ -22,7 +22,6 @@ static void	free_all(char **res, int y)
 	{
 		free(res[i]);
 		i++;
-
 	}
 	free(res);
 }
@@ -34,6 +33,16 @@ static int	is_charset(char str, char c)
 	return (0);
 }
 
+static	int	ft_strlenx(const char *str)
+{
+	int 	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 static int	count_words(char *str, char c)
 {
 	int	i;
@@ -41,36 +50,37 @@ static int	count_words(char *str, char c)
 
 	i = 0;
 	count = 0;
-	if (!(is_charset(str[0], c)))
-		count++;
 	while (str[i] && str[i + 1])
 	{
-		if (is_charset(str[i], c) && (!(is_charset(str[i + 1], c))))
+		if (is_charset(str[i], c) && str[i + 1] != c && i < ft_strlenx(str))
 			count++;
 		i++;
 	}
-	count++;
+	if (str[0] != '\0' && count == 0 && str[0] != c)
+		count++;
 	return (count);
 }
 
 static char	*custom_dup(char *str, char c, char **tmp, int y)
 {
 	int		i;
+	int		l;
 	char	*res;
 
 	i = 0;
-	while (str[i] && (!(is_charset(str[i], c))))
-		i++;
-	res = malloc(i + 1);
+	l = 0;
+	while (str[l] && (!(is_charset(str[l], c))))
+		l++;
+	res = malloc(l + 1);
 	if (!res)
 	{
 		free_all(tmp, y);
 		return (NULL);
 	}
 	i = 0;
-	while (str[i] && (!(is_charset(str[i], c))))
+	while (i < l)
 	{
-		res[i] = *str++;
+		res[i] = str[i];
 		i++;
 	}
         res[i] = '\0';
@@ -79,12 +89,11 @@ static char	*custom_dup(char *str, char c, char **tmp, int y)
 
 char	**ft_split(char const *s, char c)
 {
-
 	int		y;
 	char	**res;
 	char const	*sinistre;
 
-	res = malloc(count_words((char *)s, c) * sizeof(char *));
+	res = malloc((count_words((char *)s, c) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	y = 0;
@@ -92,28 +101,29 @@ char	**ft_split(char const *s, char c)
 	{
 		if (!(is_charset(*s, c)))
 		{
-			res[y] = custom_dup((char *)s, c, res, y);
+			sinistre = s;
+			while (*s && is_charset(*s, c) == 0)
+				s++;
+			res[y] = custom_dup((char *)sinistre, c, res, y);
 			if (!res[y])
 				return (NULL);
-			sinistre = s;
-			while (*sinistre && is_charset(*sinistre, c) == 0)
-				sinistre++;
-			s = sinistre - 1;
+			y++;
 		}
-		s++;
-		y++;
+		else
+			s++;
+
 	}
-	res[y] = 0;
+	res[y] = NULL;
 	return (res);
 }
-
+/*
 int	main(void)
 {
 	int	i;
 	int	y;
 	char **res;
 
-	res = ft_split("hello!", ' ');
+	res = ft_split("gggggggggggg", 'g');
 	i = 0;
 	y = 0;
 	while (i < 1)
@@ -125,4 +135,4 @@ int	main(void)
 	}
 	free_all(res, i);
 	return (0);
-}
+}*/
