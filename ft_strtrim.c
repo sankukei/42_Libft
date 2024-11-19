@@ -29,6 +29,8 @@ static int	m_size(char const *str, char const *set)
 		count++;
 		i++;
 	}
+	if (count == ft_strlen(str))
+		return (count);
 	while (is_trim(str[len], set))
 	{
 		count++;

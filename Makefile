@@ -51,7 +51,16 @@ SRC =	ft_isprint.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
+BSRC =	ft_lstadd_back_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstdelone_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstnew_bonus.c \
+	ft_lstsize_bonus.c \
+
 OBJS = ${SRC:.c=.o}
+
+BOBJS = ${BSRC:.c=.o}
 
 ${NAME}: ${OBJS}
 	ar -rsc ${NAME} ${OBJS} 
@@ -59,11 +68,14 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${BOBJS}
 
 fclean: clean;
 	rm -f libft.a
 
 re: fclean all
 
+bonus: ${BOBJS}
+	ar -rsc ${NAME} ${BOBJS}
+		
 .PHONY: all, clean, fclean, re
