@@ -59,7 +59,7 @@ static int	ft_strlen(char const *str)
 
 	i = 0;
 	while (str[i])
-			i++;
+		i++;
 	return (i);
 }
 

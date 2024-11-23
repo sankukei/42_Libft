@@ -62,6 +62,9 @@ OBJS = ${SRC:.c=.o}
 
 BOBJS = ${BSRC:.c=.o}
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 ${NAME}: ${OBJS}
 	ar -rsc ${NAME} ${OBJS} 
 

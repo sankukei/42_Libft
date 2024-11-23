@@ -24,6 +24,7 @@ static void	free_all(char **res, int y)
 		i++;
 	}
 	free(res);
+	res = NULL;
 }
 
 static int	is_charset(char str, char c)
@@ -40,14 +41,15 @@ static int	count_words(char *str, char c)
 
 	i = 0;
 	count = 0;
-	while (str[i] && str[i + 1])
+	while (str[i])
 	{
-		if (is_charset(str[i], c) && str[i + 1] != c)
+		while (str[i] == c)
+			i++;
+		if (str[i])
 			count++;
-		i++;
+		while (str[i] && str[i] != c)
+			i++;
 	}
-	if (str[0] != '\0' && count == 0 && str[0] != c)
-		count++;
 	return (count);
 }
 
@@ -111,17 +113,15 @@ int	main(void)
 	int	i;
 	int	y;
 	char **res;
-
-	res = ft_split("gggggggggggg", 'g');
+	res = ft_split("split  ||this|for|me|||||!|", '|');
 	i = 0;
 	y = 0;
-	while (i < 1)
+	while (res[i])
 	{
-		if (res[i])
-			printf("%s", res[i]);
+		printf("%s\n", res[i]);
 		i++;
 		y++;
 	}
-	free_all(res, i);
+	//free_all(res, i);
 	return (0);
 }*/
