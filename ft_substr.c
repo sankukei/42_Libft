@@ -10,17 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static unsigned int	ft_strlen(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -48,12 +38,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	res[i] = '\0';
 	return (res);
 }
-/*
-int	main(void)
-{
-	#include <stdio.h>
-	#include <string.h>
-	printf("%s", ft_substr("aze", 10, 5));
-
-	return (0);
-}*/

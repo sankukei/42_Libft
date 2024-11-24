@@ -57,13 +57,23 @@ BSRC =	ft_lstadd_back_bonus.c \
 	ft_lstlast_bonus.c \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \
+	ft_lstclear_bonus.c \
+	ft_lstiter_bonus.c \
+	ft_lstmap_bonus.c \
+
+BONUS_FILE = .hihi
+
 
 OBJS = ${SRC:.c=.o}
 
 BOBJS = ${BSRC:.c=.o}
 
+${BONUS_FILE}: ${BOBJS}
+	ar -rsc ${NAME} ${BOBJS}
+	touch ${BONUS_FILE}
+
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 ${NAME}: ${OBJS}
 	ar -rsc ${NAME} ${OBJS} 
@@ -71,14 +81,13 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	rm -f ${OBJS} ${BOBJS}
+	rm -f ${OBJS} ${BOBJS} ${BONUS_FILE}
 
 fclean: clean;
 	rm -f libft.a
 
 re: fclean all
 
-bonus: ${BOBJS}
-	ar -rsc ${NAME} ${BOBJS}
+bonus : ${BONUS_FILE}
 		
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus

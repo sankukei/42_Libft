@@ -10,16 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static int	ft_strlen(char const *str);
 static int	is_trim(char c, char const *set);
 
 static int	m_size(char const *str, char const *set)
 {
-	int	i;
-	int	count;
-	int	len;
+	int		i;
+	size_t	count;
+	int		len;
 
 	count = 0;
 	i = 0;
@@ -51,16 +50,6 @@ static int	is_trim(char c, char const *set)
 		i++;
 	}
 	return (0);
-}
-
-static int	ft_strlen(char const *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

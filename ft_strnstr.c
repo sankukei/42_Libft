@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 static size_t	ft_strlenx(const char *str)
 {
@@ -31,7 +30,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!*little)
+	if (ft_strlenx(little) == 0)
 		return ((char *)big);
 	little_len = ft_strlenx(little);
 	if (little_len > len)

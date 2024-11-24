@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*a;
 	const unsigned char	*b;
 
+	if (!dest && !src)
+		return (dest);
 	a = dest;
 	b = src;
 	while (n--)

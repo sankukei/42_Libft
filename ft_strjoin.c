@@ -10,23 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static int	ft_strlen(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*res;
-	int		i;
-	int		y;
+	char		*res;
+	size_t		i;
+	size_t		y;
 
 	i = 0;
 	y = 0;

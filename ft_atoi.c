@@ -38,10 +38,3 @@ int	ft_atoi(const char *str)
 		res *= -1;
 	return (res);
 }
-/*
-int	main(void)
-{
-  	#include <stdio.h>
-  	printf("%d", ft_atoi("       -123qweqweqe123"));
-	return (0);
-}*/
