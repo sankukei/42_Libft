@@ -59,11 +59,3 @@ char	*ft_itoa(int nb)
 	}
 	return (res);
 }
-
-/*
-int main(void)
-{
-#include <stdio.h>
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-123));
-}*/

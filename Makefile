@@ -50,8 +50,7 @@ SRC =	ft_isprint.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-
-BSRC =	ft_lstadd_back_bonus.c \
+	ft_lstadd_back_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstdelone_bonus.c \
 	ft_lstlast_bonus.c \
@@ -60,34 +59,28 @@ BSRC =	ft_lstadd_back_bonus.c \
 	ft_lstclear_bonus.c \
 	ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c \
-
-BONUS_FILE = .hihi
+	ft_printf.c \
+	printf_utils.c \
+	get_next_line.c \
+	get_next_line_utils.c \
 
 
 OBJS = ${SRC:.c=.o}
-
-BOBJS = ${BSRC:.c=.o}
-
-${BONUS_FILE}: ${BOBJS}
-	ar -rsc ${NAME} ${BOBJS}
-	touch ${BONUS_FILE}
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 ${NAME}: ${OBJS}
-	ar -rsc ${NAME} ${OBJS} 
+	ar -rsc ${NAME} ${OBJS} && rm *.o
 
 all: ${NAME}
 
 clean:
-	rm -f ${OBJS} ${BOBJS} ${BONUS_FILE}
+	rm -f ${OBJS} 
 
 fclean: clean;
 	rm -f libft.a
 
 re: fclean all
-
-bonus : ${BONUS_FILE}
 		
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: all, clean, fclean, re
